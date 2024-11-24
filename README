@@ -1,0 +1,9 @@
+Run 
+    make qemu-nox 
+
+    to build and start the kernel
+
+Run 
+    ./test
+
+    to run the test program

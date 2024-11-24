@@ -1,0 +1,57 @@
+Round Robin with different time quantum and same workload
+
+Process ID: 10 | Time Quantum: 35 | Turnaround Time: 3887 ticks | Burst Time: 945 ticks | Waiting Time: 2942 ticks
+Process ID: 9 | Time Quantum: 30 | Turnaround Time: 4378 ticks | Burst Time: 930 ticks | Waiting Time: 3448 ticks
+Process ID: 8 | Time Quantum: 25 | Turnaround Time: 4751 ticks | Burst Time: 925 ticks | Waiting Time: 3826 ticks
+Process ID: 7 | Time Quantum: 20 | Turnaround Time: 5196 ticks | Burst Time: 920 ticks | Waiting Time: 4276 ticks
+Process ID: 6 | Time Quantum: 15 | Turnaround Time: 5681 ticks | Burst Time: 930 ticks | Waiting Time: 4751 ticks
+Process ID: 5 | Time Quantum: 10 | Turnaround Time: 6127 ticks | Burst Time: 930 ticks | Waiting Time: 5197 ticks
+Process ID: 4 | Time Quantum: 5 | Turnaround Time: 6590 ticks | Burst Time: 930 ticks | Waiting Time: 5660 ticks
+
+Makes sense as the time quantum decreases the process will spend a lot more time in context switching and hence the turnaround time will increase.
+
+
+
+Simple Priority Scheduling with different priorities
+
+Process ID: 17 | Priority: 35 | Type: CPU-bound | Turnaround Time: 47 ticks | Response Time: 0 ticks
+Process ID: 16 | Priority: 30 | Type: I/O-bound | Turnaround Time: 150 ticks | Response Time: 50 ticks
+Process ID: 15 | Priority: 25 | Type: CPU-bound | Turnaround Time: 159 ticks | Response Time: 50 ticks
+Process ID: 14 | Priority: 20 | Type: I/O-bound | Turnaround Time: 261 ticks | Response Time: 161 ticks
+Process ID: 13 | Priority: 15 | Type: CPU-bound | Turnaround Time: 273 ticks | Response Time: 162 ticks
+Process ID: 12 | Priority: 10 | Type: I/O-bound | Turnaround Time: 375 ticks | Response Time: 275 ticks
+Process ID: 11 | Priority: 5 | Type: CPU-bound | Turnaround Time: 390 ticks | Response Time: 275 ticks
+
+We can clearly observer higher priority processes are starving lower priority processes
+
+
+
+Multi Level Feedback Queue
+
+Process ID: 18 | Type: CPU-bound | Turnaround Time: 77 ticks | Response Time: 0 ticks
+Process ID: 20 | Type: CPU-bound | Turnaround Time: 121 ticks | Response Time: 9 ticks
+Process ID: 22 | Type: CPU-bound | Turnaround Time: 135 ticks | Response Time: 14 ticks
+Process ID: 24 | Type: CPU-bound | Turnaround Time: 146 ticks | Response Time: 15 ticks
+Process ID: 26 | Type: CPU-bound | Turnaround Time: 131 ticks | Response Time: 19 ticks
+Process ID: 19 | Type: I/O-bound | Turnaround Time: 510 ticks | Response Time: 4 ticks
+Process ID: 21 | Type: I/O-bound | Turnaround Time: 498 ticks | Response Time: 13 ticks
+Process ID: 23 | Type: I/O-bound | Turnaround Time: 456 ticks | Response Time: 13 ticks
+Process ID: 25 | Type: I/O-bound | Turnaround Time: 408 ticks | Response Time: 14 ticks
+Process ID: 27 | Type: I/O-bound | Turnaround Time: 353 ticks | Response Time: 15 ticks
+
+We can observe that response times are faster than priority scheduling. However, turnaround times are higher than priority scheduling.
+
+The MLFQ scheduler prioritizes I/O-bound processes effectively, as they spend less time in the CPU and more time in higher-priority queues, resulting in lower response times.
+
+The longer turnaround times are due to the dynamic priority adjustments and queue transitions, which can cause delays compared to simple Priority Scheduling.
+
+
+
+
+
+
+
+
+
+
+
